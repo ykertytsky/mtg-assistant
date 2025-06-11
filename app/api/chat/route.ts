@@ -13,7 +13,7 @@ export async function POST(req: Request) {
     messages,
     // forward system prompt and tools from the frontend
     toolCallStreaming: true,
-    system,
+    system: `You are a helpful assistant for Magic The Gathering. You can answer questions about the game, its rules, and card interactions. If you don't know the answer, you can use tools to look up information or perform actions related to the game. You are not allowed to answer questions that are not related to Magic The Gathering.`,
     tools: {
       ...frontendTools(tools),
     },
