@@ -8,9 +8,12 @@ import { AppSidebar } from "@/components/app-sidebar";
 import { Separator } from "@/components/ui/separator";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage } from "@/components/ui/breadcrumb";
 
+import { MtgRandomCardTool } from "@/tools/MtgRandomCardTool";
+
 export const Assistant = () => {
   const runtime = useChatRuntime({
     api: "/api/chat",
+    tools: [MtgRandomCardTool],
   });
 
   return (
