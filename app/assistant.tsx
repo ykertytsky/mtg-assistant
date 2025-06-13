@@ -1,6 +1,6 @@
 "use client";
 
-import { AssistantRuntimeProvider } from "@assistant-ui/react";
+import { AssistantRuntimeProvider, makeAssistantTool } from "@assistant-ui/react";
 import { useChatRuntime } from "@assistant-ui/react-ai-sdk";
 import { Thread } from "@/components/assistant-ui/thread";
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
@@ -8,12 +8,13 @@ import { AppSidebar } from "@/components/app-sidebar";
 import { Separator } from "@/components/ui/separator";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbPage } from "@/components/ui/breadcrumb";
 
-import { MtgRandomCardTool } from "@/tools/MtgRandomCardTool";
+import { CardSearchTool } from "@/components/tools/cardSearchTool";
+
+// Removed makeAssistantTool usage as cardSearchTool is already a valid tool
 
 export const Assistant = () => {
   const runtime = useChatRuntime({
     api: "/api/chat",
-    tools: [MtgRandomCardTool],
   });
 
   return (
@@ -35,6 +36,7 @@ export const Assistant = () => {
             </Breadcrumb>
           </header>
           <Thread />
+          <CardSearchTool />
         </SidebarInset>
       </SidebarProvider>
     </AssistantRuntimeProvider>

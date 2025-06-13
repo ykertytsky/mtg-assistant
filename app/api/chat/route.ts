@@ -9,7 +9,7 @@ export async function POST(req: Request) {
   const { messages, system, tools } = await req.json();
 
   const result = streamText({
-    model: openai(process.env.GPT_MODEL),
+    model: openai(process.env.GPT_MODEL as string),
     messages,
     // forward system prompt and tools from the frontend
     toolCallStreaming: true,
