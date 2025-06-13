@@ -3,7 +3,7 @@ import { z } from "zod";
 
 const cardSearchTool = tool({
   toolName: "search_mtg_cards",
-  description: "Search for Magic: The Gathering cards with various filtering options",
+  description: "Search for Magic: The Gathering cards with various filtering options. If you are using this tool, always embed link to the image of the card for each card you return. The image should be embedded via markdown syntax to the Name Property when you are stating the card. You don't need to add another item in a list of properties. Just embed it within name. Example is: Name: [Card Name](Link to image).",
   parameters: z.object({
     // Card identification
     name: z.string().optional().describe("The card name"),
