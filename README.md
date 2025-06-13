@@ -16,6 +16,7 @@ First, add your OpenAI API key to a `.env.local` file:
 
 ```
 OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+GPT_MODEL=xxxx
 ```
 
 Then, run the development server:
